@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+        <title>رزرو بلیت سینما</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script>
+            let generatedCode = null;
+
+            function sendCodeToConsole(event) {
+                event.preventDefault(); // جلوگیری از ارسال فرم
+
+                const mobile = document.getElementById("mobile").value;
+
+                // اعتبارسنجی شماره موبایل
+                if (!/^09\d{9}$/.test(mobile)) {
+                    alert("لطفاً شماره موبایل معتبر وارد کنید");
+                    return;
+                }
+
+                // تولید کد تایید 4 رقمی
+                generatedCode = Math.floor(1000 + Math.random() * 9000);
+                console.log("کد تایید شما:", generatedCode);
+
+                // نمایش فرم کد تایید
+                document.getElementById("verification-form").style.display = "block";
+                document.getElementById("login-form").style.display = "none";
+            }
+
+            function verifyCode(event) {
+                event.preventDefault(); // جلوگیری از ارسال فرم
+
+                const enteredCode = document.getElementById("verification-code").value;
+
+                // بررسی کد تایید
+                if (enteredCode == generatedCode) {
+                    alert("ورود موفقیت‌آمیز بود!");
+                    // هدایت به صفحه اصلی
+                    window.location.href = "index2.html"; // آدرس صفحه اصلی رو تنظیم کن
+                } else {
+                    alert("کد تایید اشتباه است");
+                }
+            }
+        </script>
+    </head>
+    <body>
+       <div class="login">
+           <!-- فرم ورود -->
+           <form id="login-form" onsubmit="sendCodeToConsole(event)">
+               <h1>ورود / ثبت نام</h1>
+               <p>برای ورود یا ثبت‌ نام شماره موبایل خود را وارد کنید</p>
+               <label for="mobile">:شماره موبایل</label>
+               <input type="tel" id="mobile" required>
+               <button type="submit">ادامه</button>
+           </form>
+
+           <!-- فرم کد تایید -->
+           <form id="verification-form" style="display: none;" onsubmit="verifyCode(event)">
+               <label for="verification-code">:کد تایید</label>
+               <input type="text" id="verification-code" required>
+               <button type="submit">ورود</button>
+           </form>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+    <title>رزرو بلیت سینما</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript" src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="sticky-header bg-background text-foreground py-4">
+        <div class="flex items-center justify-between p-4">
+            <div class="flex items-center space-x-4">
+                <button class="bg-secondary text-secondary-foreground rounded-full px-4 py-2 hover:bg-secondary/80">
+                    <a href="login3.html">ورود و ثبت نام</a>
+                </button>                
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="جستجو"
+                    class="border border-border rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-ring" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="index2.html" class="text-muted-foreground">صفحه اصلی</a>
+                <a href="film.html" class="text-muted-foreground">فیلم</a>
+                <a href="cinema.html" class="text-muted-foreground">سینما</a>
+                <a href="thea.html" class="text-muted-foreground">تئاتر</a>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <div class="p-4">
+        <h2 class="text-2xl font-bold mb-4 text-right">تئاتر</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="thea/sirish.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/sirish.jpg" alt="sirish"><p class="text-center mt-2">سیریش</p>
+            </a>
+            <a href="thea/afeiZanjan.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/afei zanjan.jpg" alt="afei zanjan"><p class="text-center mt-2">کمدی موزیکال افعی زنجان</p>
+            </a>
+            <a href="thea/pizzaGhormeh.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/pizza ghorme.jpg" alt="pizza ghorme"><p class="text-center mt-2">پیتزا قرمه سبزی</p>
+            </a>
+            <a href="thea/KhaneAkhar.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/khane akhar.jpg" alt="khane akhar"><p class="text-center mt-2">نمایش خانه آخر</p>
+            </a>
+            <a href="thea/lionMesri.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/linor mesi.jpg" alt="linor mesi"><p class="text-center mt-2">لیونل مصری</p>
+            </a>
+            <a href="thea/gashtapo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/gashtapo.jpg" alt="gashtapo"><p class="text-center mt-2">گشتاپو</p>
+            </a>
+            <a href="thea/aghayeHolo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/aghay holo.jpg" alt="aghay holo"><p class="text-center mt-2">آقای هلو</p>
+            </a>
+            <a href="thea/barkod.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/barcod.jpg" alt="barcod"><p class="text-center mt-2">بارکد</p>
+            </a>
+            <a href="thea/havo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/hoo.jpg" alt="havo"><p class="text-center mt-2">کمدی موزیکال هوو</p>
+            </a>
+            <a href="thea/khastegariRana.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/rana.jpg" alt="rana"><p class="text-center mt-2">دو خواستگار برای رعنا</p>
+            </a>
+            <a href="thea/jasaz.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/jasaz.jpg" alt="jasaz"><p class="text-center mt-2">جاساز</p>
+            </a>
+            <a href="thea/mordeKhor.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/moein sho8.jpg" alt="moeinsho8"><p class="text-center mt-2">معین شو8؛مرده خور</p>
+            </a>
+            <a href="thea/tajAndTakhat.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/taj takht.jpg" alt="taj takht"><p class="text-center mt-2">بازی تاج و تخت</p>
+            </a>
+            <a href="thea/godzila.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/godzaila.jpg" alt="godzaila"><p class="text-center mt-2">گودزیلا</p>
+            </a>
+            <a href="thea/makhmase.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/makhmase.jpg" alt="makhmase"><p class="text-center mt-2">کمدی مخمصه</p>
+            </a>
+            <a href="thea/tehranStanBol.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/theraStanBol.jpg" alt="theraStanBol"><p class="text-center mt-2">تهران استانبول</p>
+            </a>
+            <a href="thea/pesarKhande.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/psarKhande.jpg" alt="psarKhande"><p class="text-center mt-2">پسر خوانده</p>
+            </a>
+            <a href="thea/zanbabam.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/zanBaba.jpg" alt="zanBaba"><p class="text-center mt-2">زن بابام میشی</p>
+            </a>
+            <a href="thea/mehmanMaman.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/mehmanMoman.jpg" alt="moeinsho8"><p class="text-center mt-2">مهمان مامان</p>
+            </a>
+            <a href="thea/maniKor.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/maniKor.jpg" alt="maniKor"><p class="text-center mt-2">مانی کور</p>
+            </a>
+            <a href="thea/ejraTehranDabSho.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/ejraTehran.jpg" alt="ejraTehran"><p class="text-center mt-2">اجرای تهران داب شو</p>
+            </a>
+            <a href="thea/shadZi.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/shadZi.jpg" alt="shangolMangolBach3"><p class="text-center mt-2">جنگ کودک شادزی</p>
+            </a>
+            <a href="thea/borjack.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/borjak.jpg" alt="borjak"><p class="text-center mt-2">برجک</p>
+            </a>
+            <a href="thea/jangAmoFarshid.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/jangAmoRashid.jpg" alt="jangAmoRashid"><p class="text-center mt-2">جنگ عمو فرشید</p>
+            </a>
+            <a href="thea/konsertKhande.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/konsertKhande.jpg" alt="pichKaham"><p class="text-center mt-2">کنسرت خنده شبهای لوتوس</p>
+            </a>
+            <a href="thea/jangKodakAmoElias.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/AmoElias.jpg" alt="AmoElias"><p class="text-center mt-2">جنگ کودک عمو الیاس</p>
+            </a>
+        </div>
+    </div><hr><br>
+    <footer class="bg-background text-foreground py-6">
+        <div class="container mx-auto flex flex-wrap justify-between">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">خدمات</h3>
+            <a href="login3.html" class="text-muted-foreground hover:text-muted text-center">ورود و ثبت نام</a>
+            <a href="call.html" class="text-muted-foreground hover:text-muted text-center">تماس با ما</a>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">راهنما</h3>
+            <a href="about.html" class="text-muted-foreground hover:text-muted text-center">درباره ما</a>
+            <a href="FAQ.html" class="text-muted-foreground hover:text-muted text-center">سوالات متداول</a>
+            <a href="#" class="text-muted-foreground hover:text-muted text-center">قوانین و مقررات</a>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">سینما</h3>
+            <a href="cinema.html" class="text-muted-foreground hover:text-muted text-center">همه سینماها</a>
+            <a href="#" class="text-muted-foreground hover:text-muted text-center">تبلیغات</a>
+          </div>
+          <div class="flex flex-col text-center">
+            <h3 class="text-lg font-semibold text-center">فیلم</h3>
+            <a href="film.html" class="text-muted-foreground hover:text-muted text-center">محتوای در حال اکران</a>
+          </div>
+          <div class="flex items-center">
+            <img aria-hidden="true" alt="logo" src="https://openui.fly.dev/openui/24x24.svg?text=🎬" class="h-8" />
+            <span class="ml-2">راحت برو سینما</span>
+          </div>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+          پشتیبانی تلفنی از ساعت ۹ الی ۲۴
+          <br />
+          ۰۹۱۰۲۲۲ ۹۲۰۰
+          <br />
+          تمامی حقوق این نرم‌افزار برای موسسه محفوظ می‌باشد
+        </div>
+      </footer>
+  </body>
+</html>

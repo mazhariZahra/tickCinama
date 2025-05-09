@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fa">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+    <title>رزرو بلیط سینما</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
+ </head>
+<body>
+    <header class="sticky-header bg-background text-foreground py-4">
+        <div class="flex items-center justify-between p-4">
+            <div class="flex items-center space-x-4">
+                <button id="login-button" class="bg-secondary text-secondary-foreground rounded-full px-4 py-2 hover:bg-secondary/80" onclick="changeToAvatar()">
+                    <a href="login3.html">ورود و ثبت نام</a>
+                </button>
+                <script>
+                    function changeToAvatar() {
+                        const button = document.getElementById("login-button");
+                        button.innerHTML = '<img src="image/adamak.png" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
+                    }
+                </script>                
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="جستجو"
+                    class="border border-border rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-ring" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="index2.html" class="text-muted-foreground">صفحه اصلی</a>
+                <a href="film.html" class="text-muted-foreground">فیلم</a>
+                <a href="cinema.html" class="text-muted-foreground">سینما</a>
+                <a href="thea.html" class="text-muted-foreground">تئاتر</a>
+            </div>
+        </div>
+    </header>       
+    
+    <br><br>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="image/mosa.jpg" class="d-block w-100" alt="mosa">
+            </div>
+            <div class="carousel-item">
+                <img src="image/bambolak.jpg" class="d-block w-100" alt="bambolak">
+              </div>
+            <div class="carousel-item" data-bs-interval="10000">
+                <img src="image/pishmarg.jpg" class="d-block w-100" alt="pishmarg">
+            </div>
+            <div class="carousel-item">
+                <img src="image/dynasor.jpg" class="d-block w-100" alt="dynasor">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="p-4">
+        <h2 class="text-2xl font-bold mb-4 text-right">فیلم سینمایی</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="cinama/aynakGhermez.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/anak red.jpg" alt="عینک قرمز"><p class="text-center mt-2">عینک قرمز</p>
+            </a>
+            <a href="cinama/dolfini.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/boy dolfin2.jpg" alt="پسردلفتی ۲"><p class="text-center mt-2">پسردلفتی ۲</p>
+            </a>
+            <a href="cinama/raha.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/raha.jpg" alt="رها"><p class="text-center mt-2">رها</p>
+            </a>
+            <a href="cinama/daynasor.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/dynasor.jpg" alt="دایناسور"><p class="text-center mt-2">دایناسور</p>
+            </a>
+            <a href="cinama/mosaKalimAlah.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/mosa.jpg" alt="موسی کلیم"><p class="text-center mt-2">موسی کلیم</p>
+            </a>
+            <a href="cinama/pishMarg.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/pishmarg.jpg" alt="پیشمرگ"><p class="text-center mt-2">پیشمرگ</p>
+            </a>
+            <a href="cinama/satJadoei.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/sat jado.jpg" alt="ساعت جادویی"><p class="text-center mt-2">ساعت جادویی</p>
+            </a>
+            <a href="cinama/baghKianosh.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/bagh kiyarsh.jpg" alt="باغ کیانوش"><p class="text-center mt-2">باغ کیانوش</p>
+            </a>
+            <a href="cinama/kharJang.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/kharchang.jpg" alt="خرچنگ"><p class="text-center mt-2">خرچنگ</p>
+            </a>
+            <a href="cinama/zodPaz.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/zodpaz.jpg" alt="زود پز"><p class="text-center mt-2">زود پز</p>
+            </a>
+            <a href="cinama/haftad30.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/70c.jpg" alt="هفتادسی"><p class="text-center mt-2">هفتادسی</p>
+            </a>
+            <a href="cinama/ariaShahr.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/ariya shahr.jpg" alt="آریا شهر"><p class="text-center mt-2">آریا شهر دونفره</p>
+            </a>
+            <a href="cinama/sobhaneBaZarafe.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/sobhane.jpg" alt="صبحانه با زافه ها"><p class="text-center mt-2">صبحانه با زرافه ها</p>
+            </a>
+            <a href="cinama/bambolak.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama/bambolak.jpg" alt="بامبولک"><p class="text-center mt-2">بامبولک</p>
+            </a>
+        </div>
+    </div>
+    <div class="p-4">
+        <h2 class="text-2xl font-bold mb-4 text-right">تئاتر</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="thea/sirish.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/sirish.jpg" alt="sirish"><p class="text-center mt-2">سیریش</p>
+            </a>
+            <a href="thea/afeiZanjan.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/afei zanjan.jpg" alt="afei zanjan"><p class="text-center mt-2">کمدی موزیکال افعی زنجان</p>
+            </a>
+            <a href="thea/pizzaGhormeh.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/pizza ghorme.jpg" alt="pizza ghorme"><p class="text-center mt-2">پیتزا قرمه سبزی</p>
+            </a>
+            <a href="thea/KhaneAkhar.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/khane akhar.jpg" alt="khane akhar"><p class="text-center mt-2">نمایش خانه آخر</p>
+            </a>
+            <a href="thea/lionMesri.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/linor mesi.jpg" alt="linor mesi"><p class="text-center mt-2">لیونل مصری</p>
+            </a>
+            <a href="thea/gashtapo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/gashtapo.jpg" alt="gashtapo"><p class="text-center mt-2">گشتاپو</p>
+            </a>
+            <a href="thea/aghayeHolo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/aghay holo.jpg" alt="aghay holo"><p class="text-center mt-2">آقای هلو</p>
+            </a>
+            <a href="thea/barkod.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/barcod.jpg" alt="barcod"><p class="text-center mt-2">بارکد</p>
+            </a>
+            <a href="thea/havo.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/hoo.jpg" alt="havo"><p class="text-center mt-2">کمدی موزیکال هوو</p>
+            </a>
+            <a href="thea/khastegariRana.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/rana.jpg" alt="rana"><p class="text-center mt-2">دو خواستگار برای رعنا</p>
+            </a>
+            <a href="thea/jasaz.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/jasaz.jpg" alt="jasaz"><p class="text-center mt-2">جاساز</p>
+            </a>
+            <a href="thea/mordeKhor.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/moein sho8.jpg" alt="moeinsho8"><p class="text-center mt-2">معین شو8؛مرده خور</p>
+            </a>
+            <a href="thea/tajAndTakhat.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/taj takht.jpg" alt="taj takht"><p class="text-center mt-2">بازی تاج و تخت</p>
+            </a>
+            <a href="thea/godzila.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/taatr/godzaila.jpg" alt="godzaila"><p class="text-center mt-2">گودزیلا</p>
+            </a>
+        </div>
+    </div>
+    <div class="p-4">
+        <h2 class="text-2xl font-bold mb-4 text-right">فیلم خارجی سینما</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="filmCinama/nefrinGardanBandRoz.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama2/nefrin.jpg" alt="nefrinRozmal"><p class="text-center mt-2">نفرین گردنبند(رزمال)</p>
+            </a>
+            <a href="filmCinama/nefrinGardanBand.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama2/nefrin.jpg" alt="nefrin"><p class="text-center mt-2">نفرین گردن بند</p>
+            </a>
+            <a href="filmCinama/insideInOut.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama2/inside.jpg" alt="inside"><p class="text-center mt-2">درون و بیرون 2</p>
+            </a>
+            <a href="filmCinama/rahebe2.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/cinama2/rabehe.jpg" alt="rabehe"><p class="text-center mt-2">راهبه دو</p>
+            </a>
+        </div>
+    </div>
+    <div class="p-4">
+        <h2 class="text-2xl font-bold mb-4 text-right">هنر و تجربه</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <a href="HonarAndTajrobe/jenayatZaman.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/honar/janayatZaman.jpg" alt="avazBad"><p class="text-center mt-2">جنایت زمان</p>
+            </a>
+            <a href="HonarAndTajrobe/haftBaharNarenj.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/honar/haftBahar.jpg" alt="berkeKhamosh"><p class="text-center mt-2">هفت بهار نارنج</p>
+            </a>
+            <a href="HonarAndTajrobe/dastMaldini.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/honar/maldini.jpg" alt="maldini"><p class="text-center mt-2">برسد به دست مالدینی</p>
+            </a>
+            <a href="HonarAndTajrobe/davj.html" class="movie-card block p-2 border rounded-lg shadow hover:shadow-xl hover:bg-gray-100 transition duration-300">
+                <img src="image/honar/davaj.jpg" alt="davaj"><p class="text-center mt-2">داوج پارادیزو</p>
+            </a>
+        </div>
+    </div><hr><br>
+    <footer class="bg-background text-foreground py-6">
+        <div class="container mx-auto flex flex-wrap justify-between">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">خدمات</h3>
+            <a href="login3.html" class="text-muted-foreground hover:text-muted text-center">ورود و ثبت نام</a>
+            <a href="call.html" class="text-muted-foreground hover:text-muted text-center">تماس با ما</a>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">راهنما</h3>
+            <a href="about.html" class="text-muted-foreground hover:text-muted text-center">درباره ما</a>
+            <a href="FAQ.html" class="text-muted-foreground hover:text-muted text-center">سوالات متداول</a>
+            <a href="ghavanin.html" class="text-muted-foreground hover:text-muted text-center">قوانین و مقررات</a>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold text-center">سینما</h3>
+            <a href="cinema.html" class="text-muted-foreground hover:text-muted text-center">همه سینماها</a>
+            <a href="#" class="text-muted-foreground hover:text-muted text-center">تبلیغات</a>
+          </div>
+          <div class="flex flex-col text-center">
+            <h3 class="text-lg font-semibold text-center">فیلم</h3>
+            <a href="film.html" class="text-muted-foreground hover:text-muted text-center">محتوای در حال اکران</a>
+          </div>
+          <div class="flex items-center">
+            <img aria-hidden="true" alt="logo" src="https://openui.fly.dev/openui/24x24.svg?text=🎬" class="h-8" />
+            <span class="ml-2">راحت برو سینما</span>
+          </div>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+          پشتیبانی تلفنی از ساعت ۹ الی ۲۴
+          <br />
+          ۰۹۱۰۲۲۲ ۹۲۰۰
+          <br />
+          تمامی حقوق این نرم‌افزار برای موسسه محفوظ می‌باشد
+        </div>
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>

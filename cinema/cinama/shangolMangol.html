@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شنگول منگول| رزرو بلیط سینما</title>
+    <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/css/persian-datepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
+</head>
+
+<body class="bg-white text-white">
+    <header class="sticky-header bg-background text-foreground py-4 text-black">
+        <div class="flex items-center justify-between p-4">
+            <div class="flex items-center space-x-4">
+                <button id="login-button" class="bg-secondary text-secondary-foreground rounded-full px-4 py-2 hover:bg-secondary/80" onclick="changeToAvatar()">
+                    <a href="../login3.html">ورود و ثبت نام</a>
+                </button>
+                <script>
+                    function changeToAvatar() {
+                        const button = document.getElementById("login-button");
+                        button.innerHTML = '<img src="image/adamak.png" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
+                    }
+                </script>
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="جستجو"
+                    class="border border-border rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-ring" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="../index2.html" class="text-muted-foreground">صفحه اصلی</a>
+                <a href="../film.html" class="text-muted-foreground">فیلم</a>
+                <a href="../cinema.html" class="text-muted-foreground">سینما</a>
+                <a href="../thea.html" class="text-muted-foreground">تئاتر</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="relative w-full h-[500px] flex items-center justify-center bg-gradient-to-r from-purple-500 to-black">
+        <!-- تصویر پس‌زمینه -->
+        <img src="../thea/image/black-pg.jpg" alt="شنگول منگول" class="absolute inset-0 w-full h-full object-cover opacity-50">
+
+        <!-- محتوای اصلی -->
+        <div class="relative flex max-w-5xl w-full mx-auto px-6 items-center">
+
+
+            <!-- بخش توضیحات -->
+            <div class="ml-auto text-right max-w-lg">
+                <h2 class="text-3xl font-bold">شنگول منگول</h2>
+                <p class="text-gray-400 mt-1">کیانوش دالوند - فرزاد دالوند<br>...کامران تفتی.هادی کاظمی.هومن حاجی عبداللهی.سمانه پاکدل و</p>
+
+                <span class="inline-block bg-gray-800 text-sm px-3 py-1 rounded-full mt-2">انیمیشن</span>
+
+                <p class="text-gray-300 mt-4">
+                    این اثر اقتباسی آزاد از داستان فولکلور گرگ و هفت بزغاله است. این پویانمایی ماجرای سه بزغاله جوان را دنبال می‌کند که می‌خواهند صلح را در شهر حیوانات برقرار و حفظ کنند
+                </p>
+
+                <div class="flex items-center text-black-600 text-sm mt-1">
+                    علاقه<br>
+                    ⭐ 4.5/5
+                </div>
+
+
+                <div class="flex items-center space-x-4 mt-6">
+                    <span class="text-gray-400">۱۴۰۰</span>
+                    <span class="text-gray-400">ساخت 🕒</span>
+                </div>
+
+                <!-- دکمه‌ها -->
+                <div class="mt-6 flex space-x-4">
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-full" onclick="scrollDown()">انتخاب سالن و
+                        خرید</button>
+                    <!-- دکمه نمایش ویدئو -->
+                    <button class="border border-gray-500 px-6 py-2 rounded-full text-white" onclick="openModal()">تیزر
+                        ▶</button>
+
+                    <!-- مدال (پنجره پاپ‌آپ) برای نمایش ویدئو -->
+                    <div id="videoModal"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 hidden">
+                        <div class="bg-white p-4 rounded-lg shadow-lg max-w-lg w-full relative">
+                            <!-- دکمه بستن -->
+                            <button class="absolute top-2 right-2 text-gray-600 text-xl"
+                                onclick="closeModal()">✖</button>
+
+                            <!-- ویدئو -->
+                            <video id="trailerVideo" controls class="w-full rounded-lg">
+                                <source src="video/trailer.mp4" type="video/mp4">
+                                مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- پوستر فیلم با فاصله بیشتر -->
+            <img src="../image/cinama/shangol.jpg" alt="شنگول منگول" class="h-96 rounded-xl shadow-lg ml-16">
+        </div>
+    </div>
+
+    <br>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4">
+            <!-- تصویر سینما -->
+            <img src="../image/pardis/pardeTalaei.png" alt="پردیس سینمایی پرده طلایی"
+                class="w-40 h-28 object-cover rounded-lg cursor-pointer" onclick="toggleSchedule()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">پردیس سینمایی پرده طلایی</h2>
+                <p class="text-gray-500 text-sm">تهران ، آيت الله سعيدی ، شهرك وليعصر ، خيابان مهر ، جنب بازار بزرگ ولیعصر</p>
+                <div class="flex items-center text-gray-600 text-sm mt-1">
+                    ⭐ 5.0/5
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="13:15">13:15</option>
+                            <option value="15:30">15:30</option>
+                            <option value="20:30">20:30</option>
+                            <option value="23:00">23:00</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">55,000 تومان</span>
+                    <button class="bg-red-600 text-white px-4 py-2 rounded-lg">خرید 🎫</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule() {
+            document.getElementById("schedule").classList.toggle("hidden");
+        }
+    </script>
+    <script>
+        function scrollDown() {
+            window.scrollBy({
+                top: 300, // مقدار اسکرول به پایین (می‌توان تغییر داد)
+                behavior: 'smooth' // انیمیشن نرم برای اسکرول
+            });
+        }
+        function openModal() {
+            document.getElementById('videoModal').classList.remove('hidden');
+            document.getElementById('trailerVideo').play(); // پخش ویدئو به‌صورت خودکار
+        }
+
+        function closeModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+            document.getElementById('trailerVideo').pause(); // توقف ویدئو
+        }
+    </script>
+
+    <hr><br><br>
+    <footer class="bg-background text-foreground py-6 text-black">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">خدمات</h3>
+                <a href="../login3.html" class="text-muted-foreground hover:text-muted text-center">ورود و ثبت نام</a>
+                <a href="../call.html" class="text-muted-foreground hover:text-muted text-center">تماس با ما</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">راهنما</h3>
+                <a href="../about.html" class="text-muted-foreground hover:text-muted text-center">درباره ما</a>
+                <a href="../FAQ.html" class="text-muted-foreground hover:text-muted text-center">سوالات متداول</a>
+                <a href="../ghavanin.html" class="text-muted-foreground hover:text-muted text-center">قوانین و مقررات</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">سینما</h3>
+                <a href="../cinema.html" class="text-muted-foreground hover:text-muted text-center">همه سینماها</a>
+                <a href="#" class="text-muted-foreground hover:text-muted text-center">تبلیغات</a>
+            </div>
+            <div class="flex flex-col text-center">
+                <h3 class="text-lg font-semibold text-center">فیلم</h3>
+                <a href="../film.html" class="text-muted-foreground hover:text-muted text-center">محتوای در حال
+                    اکران</a>
+            </div>
+            <div class="flex items-center">
+                <img aria-hidden="true" alt="logo" src="https://openui.fly.dev/openui/24x24.svg?text=🎬" class="h-8" />
+                <span class="ml-2">راحت برو سینما</span>
+            </div>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+            پشتیبانی تلفنی از ساعت ۹ الی ۲۴
+            <br />
+            ۰۹۱۰۲۲۲ ۹۲۰۰
+            <br />
+            تمامی حقوق این نرم‌افزار برای موسسه محفوظ می‌باشد
+        </div>
+    </footer>
+</body>
+
+</html>

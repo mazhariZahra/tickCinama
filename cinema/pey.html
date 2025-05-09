@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزرو بلیت سینما</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .seat { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .available { background-color: #ffffff; border: 1px solid #000; }
+        .reserved { background-color: #a0aec0; }
+        .sold { background-color: #2d3748; }
+        .selected { background-color: #e53e3e; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+        <div class="flex">
+            <img src="/movie-poster.jpg" alt="Movie Poster" class="w-1/3 rounded-lg">
+            <div class="w-2/3 ml-4">
+                <h2 class="text-2xl font-bold mb-2">عینک قرمز</h2>
+                <p class="text-sm mb-1">پردیس سینمایی باغ کتاب</p>
+                <p class="text-sm mb-4">سالن شش - چهارشنبه ۱۳ فروردین ساعت ۲۱:۰۰</p>
+                <h3 class="text-lg font-semibold mb-2">ظرفیت سالن: ۲۱ صندلی (۲۱ صندلی خالی)</h3>
+                <div id="seat-map" class="grid grid-cols-4 gap-2 mb-4"></div>
+                <div class="flex gap-2 mb-4">
+                    <div class="flex items-center gap-1"><span class="w-4 h-4 bg-red-600 rounded-full"></span> انتخاب شما</div>
+                    <div class="flex items-center gap-1"><span class="w-4 h-4 bg-gray-800 rounded-full"></span> فروخته شده</div>
+                    <div class="flex items-center gap-1"><span class="w-4 h-4 bg-gray-400 rounded-full"></span> رزرو شده</div>
+                    <div class="flex items-center gap-1"><span class="w-4 h-4 bg-white border rounded-full"></span> خالی عادی</div>
+                </div>
+                <button class="bg-red-600 text-white px-4 py-2 rounded">تغییر سانس</button>
+            </div>
+        </div>
+        <div class="mt-4">
+            <p id="total-price">مبلغ کل: ۰ تومان</p>
+            <button class="bg-red-600 text-white px-4 py-2 rounded mt-2">تایید و ادامه خرید</button>
+        </div>
+    </div>
+
+    <script>
+        const seatPrice = 110000;
+        const reservedSeats = [5, 6];
+        const soldSeats = [4];
+        const selectedSeats = [];
+
+        function renderSeats() {
+            const seatMap = document.getElementById('seat-map');
+            seatMap.innerHTML = '';
+
+            for (let i = 1; i <= 21; i++) {
+                const seat = document.createElement('div');
+                seat.className = 'seat available';
+                if (reservedSeats.includes(i)) seat.classList.add('reserved');
+                if (soldSeats.includes(i)) seat.classList.add('sold');
+                seat.textContent = i;
+                seat.onclick = () => toggleSeatSelection(i);
+                seatMap.appendChild(seat);
+            }
+        }
+
+        function toggleSeatSelection(seat) {
+            if (reservedSeats.includes(seat) || soldSeats.includes(seat)) return;
+            const index = selectedSeats.indexOf(seat);
+            if (index >= 0) selectedSeats.splice(index, 1);
+            else selectedSeats.push(seat);
+            document.getElementById('total-price').textContent = 'مبلغ کل: ' + (selectedSeats.length * seatPrice) + ' تومان';
+            renderSeats();
+        }
+
+        renderSeats();
+    </script>
+</body>
+</html>

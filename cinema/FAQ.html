@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+    <title>رزرو بلیت سینما</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="sticky-header bg-background text-foreground py-4">
+        <div class="flex items-center justify-between p-4">
+            <div class="flex items-center space-x-4">
+                <button id="login-button" class="bg-secondary text-secondary-foreground rounded-full px-4 py-2 hover:bg-secondary/80" onclick="changeToAvatar()">
+                    <a href="login3.html">ورود و ثبت نام</a>
+                </button>
+                <script>
+                    function changeToAvatar() {
+                        const button = document.getElementById("login-button");
+                        button.innerHTML = '<img src="image/adamak.png" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
+                    }
+                </script>
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="جستجو"
+                    class="border border-border rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-ring" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="index2.html" class="text-muted-foreground">صفحه اصلی</a>
+                <a href="film.html" class="text-muted-foreground">فیلم</a>
+                <a href="cinema.html" class="text-muted-foreground">سینما</a>
+                <a href="thea.html" class="text-muted-foreground">تئاتر</a>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">صندلی را چگونه انتخاب کنم؟</div>
+        <div class="faq-answer">پس از انتخاب سانس، به صفحه پلان سینما «چیدمان صندلی‌ها» منتقل می‌شوید و می‌توانید صندلی مورد نظر خود را انتخاب کرده و خرید را نهایی کنید.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">رنگ‌بندی صندلی‌ها در صفحه پلان سینما به چه معناست؟</div>
+        <div class="faq-answer">در پلان سینما صندلی‌ها به رنگ های مختلف نمایش داده می‌شوند که هرکدام دربرگیرنده معنای خاص هستند:<br>قرمز: انتخاب شما | مشکی: فروخته شده | خاکستری: رزرو شده</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">چگونه می‌توانم سانس یا صندلی‌ام را جابجا کنم؟</div>
+        <div class="faq-answer">بعد از خرید بلیط، تنها با کنسل کردن بلیط و خرید مجدد می‌توانید سانس و صندلی خود را تغییر دهید.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">سانس بلیت خریداری شده ام، لغو شده است. باید چه کار کنم؟</div>
+        <div class="faq-answer">گاهی پیش می آید برخی سانس ها علیرغم فروش بلیت بدلایل مختلف از سوی سینما یا وزارت ارشاد لغو می شود. در این مواقع، وجه بلیت لغو شده به کیف پول شما عودت داده می شود و پیامک لغو سانس جهت عدم مراجعه شما به سینما برایتان پیامک می‌گردد.</div>
+      </div>
+    </div>
+    <hr><br><br><br>
+    <footer class="bg-background text-foreground py-6">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">خدمات</h3>
+                <a href="login3.html" class="text-muted-foreground hover:text-muted text-center">ورود و ثبت نام</a>
+                <a href="call.html" class="text-muted-foreground hover:text-muted text-center">تماس با ما</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">راهنما</h3>
+                <a href="about.html" class="text-muted-foreground hover:text-muted text-center">درباره ما</a>
+                <a href="FAQ.html" class="text-muted-foreground hover:text-muted text-center">سوالات متداول</a>
+                <a href="#" class="text-muted-foreground hover:text-muted text-center">قوانین و مقررات</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">سینما</h3>
+                <a href="cinema.html" class="text-muted-foreground hover:text-muted text-center">همه سینماها</a>
+                <a href="#" class="text-muted-foreground hover:text-muted text-center">تبلیغات</a>
+            </div>
+            <div class="flex flex-col text-center">
+                <h3 class="text-lg font-semibold text-center">فیلم</h3>
+                <a href="film.html" class="text-muted-foreground hover:text-muted text-center">محتوای در حال اکران</a>
+            </div>
+            <div class="flex items-center">
+                <img aria-hidden="true" alt="logo" src="https://openui.fly.dev/openui/24x24.svg?text=🎬" class="h-8" />
+                <span class="ml-2">راحت برو سینما</span>
+            </div>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+            پشتیبانی تلفنی از ساعت ۹ الی ۲۴
+            <br />
+            ۰۹۱۰۲۲۲ ۹۲۰۰
+            <br />
+            تمامی حقوق این نرم‌افزار برای موسسه محفوظ می‌باشد
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پردیس سینمایی هدیش| رزرو بلیط سینما</title>
+    <link rel="icon" type="image/jpg" href="https://openui.fly.dev/openui/24x24.svg?text=🎬">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/css/persian-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
+</head>
+
+<body class="bg-white text-white">
+    <header class="sticky-header bg-background text-foreground py-4 text-black">
+        <div class="flex items-center justify-between p-4">
+            <div class="flex items-center space-x-4">
+                <button id="login-button" class="bg-secondary text-secondary-foreground rounded-full px-4 py-2 hover:bg-secondary/80" onclick="changeToAvatar()">
+                    <a href="../login3.html">ورود و ثبت نام</a>
+                </button>
+                <script>
+                    function changeToAvatar() {
+                        const button = document.getElementById("login-button");
+                        button.innerHTML = '<img src="image/adamak.png" alt="Avatar" style="width: 30px; height: 30px; border-radius: 50%;">';
+                    }
+                </script> 
+            </div>
+            <div class="relative">
+                <input type="text" placeholder="جستجو"
+                    class="border border-border rounded-full px-4 py-2 focus:outline-none focus:ring focus:ring-ring" />
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <img aria-hidden="true" alt="search-icon" src="https://openui.fly.dev/openui/24x24.svg?text=🔍" />
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="../index2.html" class="text-muted-foreground">صفحه اصلی</a>
+                <a href="../film.html" class="text-muted-foreground">فیلم</a>
+                <a href="../cinema.html" class="text-muted-foreground">سینما</a>
+                <a href="../thea.html" class="text-muted-foreground">تئاتر</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="relative w-full h-[400px] flex items-center justify-center bg-black">
+        <!-- تصویر پس‌زمینه -->
+        <img src="../thea/image/black-pg.jpg" alt="پردیس سینمایی بام نیایش"
+            class="absolute inset-0 w-full h-full object-cover opacity-50">
+
+        <!-- محتوای اصلی -->
+        <div class="relative flex max-w-4xl w-full mx-auto px-6 items-center">
+            <!-- بخش توضیحات -->
+            <div class="ml-auto text-right max-w-lg">
+                <h2 class="text-3xl font-bold">پردیس سینمایی هدیش</h2>
+                <p class="text-gray-400 mt-1">میدان هروی - خ موسوی - روبروی خیابان شمشاد - مجموعه تجاری هدیش مال - سینمای هدیش</p>
+
+                <!-- بخش آیکن‌ها -->
+                <div class="flex space-x-4 text-white text-xl mt-4">
+                    <i class="fas fa-pencil-alt"></i> <!-- نقد و بررسی -->
+                    <i class="fas fa-shopping-bag"></i> <!-- خرید -->
+                    <i class="fas fa-utensils"></i> <!-- رستوران -->
+                    <i class="fas fa-hamburger"></i> <!-- فست فود -->
+                    <i class="fas fa-ticket-alt"></i> <!-- بلیط -->
+                    <i class="fas fa-coffee"></i> <!-- کافی‌شاپ -->
+                    <i class="fas fa-parking"></i> <!-- پارکینگ -->
+                    <i class="fas fa-wheelchair"></i> <!-- دسترسی معلولین -->
+                </div>
+
+                <div class="flex items-center text-gray-400 text-sm mt-1">
+                    ⭐ 4.8/5
+                </div>
+
+                <div class="mt-6 flex space-x-4">
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-full" onclick="scrollDown()">انتخاب سالن و
+                        خرید</button>
+                        <a href="https://www.google.com/maps/place/Hadish+Mall+Cineplex/@35.7654246,51.480909,19z/data=!4m6!3m5!1s0x3f8e052d823fdf4b:0x2810bd7bbb40779b!8m2!3d35.7654208!4d51.4808035!16s%2Fg%2F11ns3yp5c9?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <button class="border border-gray-500 px-6 py-2 rounded-full text-white">📍 مسیریابی</button>
+                        </a>                        
+                </div>
+            </div>
+
+            <!-- تصویر سینما -->
+            <img src="../image/pardis/hodish.png" alt="پردیس سینمایی هدیش"
+                class="w-[400px] w-64 rounded-2xl shadow-lg ml-12">
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/mosa.jpg" alt="موسی کلیم الله"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule2()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">موسی کلیم الله</h2>
+                <p class="text-gray-500 text-sm">ابراهیم حاتمی کیا</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">تاریخی</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۲</span>
+                        <span>ساخت📆</span>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule2()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule2" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date2" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="12:30">12:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="22:30">22:30</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">110,000 تومان</span>
+                    <button id="buyButton" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date2').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule2() {
+            document.getElementById("schedule2").classList.toggle("hidden");
+        }
+    </script>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/dynasor.jpg" alt="دایناسور"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule3()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">دایناسور</h2>
+                <p class="text-gray-500 text-sm">مسعود اطیابی</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">کمدی</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۳</span>
+                        <span>ساخت📆</span>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule3()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule3" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date3" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="22:15">22:15</option>
+                            <option value="23:00">23:00</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">110,000 تومان</span>
+                    <button id="buyButton2" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton2").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date3').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule3() {
+            document.getElementById("schedule3").classList.toggle("hidden");
+        }
+    </script>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/bambolak.jpg" alt="بامبولک"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule5()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">بامبولک</h2>
+                <p class="text-gray-500 text-sm">آرش معیریان</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">کودک و نوجوان</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۳</span>
+                        <span>ساخت📆</span>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule5()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule5" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date5" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="11:50">11:50</option>
+                            <option value="15:10">15:10</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">110,000 تومان</span>
+                    <button id="buyButton4" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton4").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date5').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule5() {
+            document.getElementById("schedule5").classList.toggle("hidden");
+        }
+    </script>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/70c.jpg" alt="هفتادسی"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule6()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">هفتادسی</h2>
+                <p class="text-gray-500 text-sm">بهرام افشاری</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">کمدی</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۲</span>
+                        <span>ساخت📆</span>
+                    </div>
+                    <div class="ml-4">
+                        5/5<br>
+                        علاقه♡
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule6()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule6" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date6" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="18:30">18:30</option>
+                            <option value="22:30">22:30</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">200,000 تومان</span>
+                    <button id="buyButton5" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton5").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date6').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule6() {
+            document.getElementById("schedule6").classList.toggle("hidden");
+        }
+    </script>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/boy dolfin2.jpg" alt="پسر دلفینی ۲"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule7()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">پسر دلفینی ۲</h2>
+                <p class="text-gray-500 text-sm">محمدخیراندیش</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">کودک و نوجوان</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۳</span>
+                        <span>ساخت📆</span>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule7()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule7" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date7" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="13:20">13:20</option>
+                            <option value="16:40">16:40</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">110,000 تومان</span>
+                    <button id="buyButton6" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton6").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date7').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule7() {
+            document.getElementById("schedule7").classList.toggle("hidden");
+        }
+    </script>
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-8 text-right rtl text-black">
+        <div class="flex items-center space-x-4 flex-row-reverse">
+            <!-- تصویر سینما -->
+            <img src="../image/cinama/raha.jpg" alt="رها"
+                class="w-30 h-40 object-cover rounded-lg cursor-pointer ml-4" onclick="toggleSchedule8()">
+
+            <!-- اطلاعات سینما -->
+            <div class="flex-1">
+                <h2 class="text-xl font-bold">رها</h2>
+                <p class="text-gray-500 text-sm">حسام فرهمند</p><br>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">خانوادگی</span>
+                <span class="inline-wh bg-gray-300 text-sm px-3 py-1 rounded-full mt-2 text-black">درام</span>
+                <div class="flex justify-end w-full items-center text-black-600 text-sm mt-1">
+                    <div class="flex flex-col items-end space-y-1">
+                        <span>۱۴۰۳</span>
+                        <span>ساخت📆</span>
+                    </div>
+                </div>
+                <button class="text-red-500 text-sm mt-2" onclick="toggleSchedule8()">سانس‌ها ⬆</button>
+            </div>
+        </div>
+
+        <!-- لیست سانس‌ها (پنهان تا کلیک شود) -->
+        <div id="schedule8" class="hidden mt-4 border-t pt-4">
+            <div class="bg-white p-3 rounded-lg shadow">
+                <div class="flex justify-between items-center">
+                    <!-- انتخاب تاریخ (شمسی) -->
+                    <div>
+                        <label for="date" class="text-gray-700">انتخاب تاریخ:</label>
+                        <input type="text" id="date8" class="border p-2 rounded-lg" readonly>
+                    </div>
+
+                    <!-- انتخاب ساعت -->
+                    <div>
+                        <label for="time" class="text-gray-700">انتخاب ساعت:</label>
+                        <select id="time" class="border p-2 rounded-lg">
+                            <option value="12:15">12:15</option>
+                            <option value="14:15">14:15</option>
+                            <option value="17:00">17:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+
+                    <span class="text-gray-500">110,000 تومان</span>
+                    <button id="buyButton7" class="bg-red-600 text-white px-4 py-2 rounded-lg">
+                        خرید 🎫
+                    </button>
+                    
+                    <script>
+                    document.getElementById("buyButton7").addEventListener("click", function() {
+                        // بررسی وضعیت ورود کاربر
+                        let isLoggedIn = localStorage.getItem("isLoggedIn"); 
+                        
+                        if (isLoggedIn === "true") {
+                            // اگر کاربر لاگین کرده باشد، به سایت مورد نظر منتقل شود
+                            window.location.href = "https://example.com/dashboard"; 
+                        } else {
+                            // اگر لاگین نکرده باشد، به صفحه ورود منتقل شود
+                            window.location.href = "../login3.html";
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                var today = new persianDate().toLocale('fa').format('YYYY/MM/DD'); // تاریخ امروز شمسی
+
+                $('#date8').persianDatepicker({
+                    format: 'YYYY/MM/DD',
+                    autoClose: true,
+                    initialValue: true,
+                    minDate: today // غیرفعال کردن تاریخ‌های قبل از امروز
+                });
+            });
+        </script>
+    </div>
+    <script>
+        function toggleSchedule8() {
+            document.getElementById("schedule8").classList.toggle("hidden");
+        }
+    </script>
+    <script>
+        function scrollDown() {
+            window.scrollBy({
+                top: 500, // مقدار اسکرول به پایین (می‌توان تغییر داد)
+                behavior: 'smooth' // انیمیشن نرم برای اسکرول
+            });
+        }
+        function openModal() {
+            document.getElementById('videoModal').classList.remove('hidden');
+            document.getElementById('trailerVideo').play(); // پخش ویدئو به‌صورت خودکار
+        }
+
+        function closeModal() {
+            document.getElementById('videoModal').classList.add('hidden');
+            document.getElementById('trailerVideo').pause(); // توقف ویدئو
+        }
+    </script>
+
+    <hr><br><br>
+    <footer class="bg-background text-foreground py-6 text-black">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">خدمات</h3>
+                <a href="../login3.html" class="text-muted-foreground hover:text-muted text-center">ورود و ثبت نام</a>
+                <a href="../call.html" class="text-muted-foreground hover:text-muted text-center">تماس با ما</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">راهنما</h3>
+                <a href="../about.html" class="text-muted-foreground hover:text-muted text-center">درباره ما</a>
+                <a href="../FAQ.html" class="text-muted-foreground hover:text-muted text-center">سوالات متداول</a>
+                <a href="../ghavanin.html" class="text-muted-foreground hover:text-muted text-center">قوانین و
+                    مقررات</a>
+            </div>
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold text-center">سینما</h3>
+                <a href="../cinema.html" class="text-muted-foreground hover:text-muted text-center">همه سینماها</a>
+                <a href="#" class="text-muted-foreground hover:text-muted text-center">تبلیغات</a>
+            </div>
+            <div class="flex flex-col text-center">
+                <h3 class="text-lg font-semibold text-center">فیلم</h3>
+                <a href="../film.html" class="text-muted-foreground hover:text-muted text-center">محتوای در حال
+                    اکران</a>
+            </div>
+            <div class="flex items-center">
+                <img aria-hidden="true" alt="logo" src="https://openui.fly.dev/openui/24x24.svg?text=🎬" class="h-8" />
+                <span class="ml-2">راحت برو سینما</span>
+            </div>
+        </div>
+        <div class="text-center text-sm text-muted-foreground mt-4">
+            پشتیبانی تلفنی از ساعت ۹ الی ۲۴
+            <br />
+            ۰۹۱۰۲۲۲ ۹۲۰۰
+            <br />
+            تمامی حقوق این نرم‌افزار برای موسسه محفوظ می‌باشد
+        </div>
+    </footer>
+</body>
+
+</html>
